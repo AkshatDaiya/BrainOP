@@ -1,0 +1,39 @@
+* {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.changeOutLineCol {
+    transition: all 0.2s ease-out;
+    border: 2px solid #d9d9d9;
+}
+
+.changeOutLineCol:focus {
+    outline: none;
+    border: 2px solid rgb(229, 119, 219);
+}
+
+.transition-max-height {
+    transition: max-height 0.3s ease-out;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #000000;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
