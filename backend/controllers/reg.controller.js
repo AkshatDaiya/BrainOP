@@ -61,6 +61,7 @@ exports.loginCheck = async (req, res) => {
           expires: new Date(Date.now() + 4 * 3600000),
           httpOnly: true,
           secure: true,
+          sameSite: "None",
         });
 
         return res.status(200).json({
