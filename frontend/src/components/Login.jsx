@@ -8,7 +8,7 @@ import axios from "axios";
 function Login() {
   const navigate = useNavigate();
   const [eye, setEye] = useState(false);
-  const [_, setCookies] = useCookies(["access_token"]);
+  const [_, setCookies] = useCookies(["jwtoken"]);
   const [error, setError] = useState("");
   const [data, setData] = useState({
     email: "",
@@ -33,7 +33,7 @@ function Login() {
           "https://brainop-back.onrender.com/api/login",
           data
         );
-        setCookies("access_token", response.data.token, { path: "/" });
+        setCookies("jwtoken", response.data.token, { path: "/" });
         localStorage.setItem("fullName", response.data.apiData);
         navigate("/posts");
       } catch (error) {

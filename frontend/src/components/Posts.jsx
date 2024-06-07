@@ -6,7 +6,7 @@ import axios from "axios";
 import Cards from "./partials/Cards";
 
 function Posts() {
-  const [cookies, setCookie, removeCookie] = useCookies(["access_token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["jwtoken"]);
   const [postsData, setPostsData] = useState();
   const navigate = useNavigate();
   const userName = localStorage.getItem("fullName");
@@ -23,21 +23,21 @@ function Posts() {
       }
     };
 
-    if (cookies.access_token) {
+    if (cookies.jwtoken) {
       fetchData();
     }
-  }, [cookies.access_token]);
+  }, [cookies.jwtoken]);
 
   useEffect(() => {
-    const token = cookies.access_token;
+    const token = cookies.jwtoken;
     if (!token) {
       navigate("/");
     }
-  }, [cookies.access_token, navigate]);
+  }, [cookies.jwtoken, navigate]);
 
   const handleLogOut = () => {
     localStorage.clear();
-    removeCookie("access_token", { path: "/" });
+    removeCookie("jwtoken", { path: "/" });
     navigate("/");
   };
 
