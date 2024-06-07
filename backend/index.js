@@ -10,7 +10,7 @@ const Router = require("./router/user.router.js");
 const cookieParser = require("cookie-parser");
 
 app.use(cors({
-  origin: 'https://grull-task.vercel.app',
+  origin: 'https://brain-op-front.vercel.app',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));

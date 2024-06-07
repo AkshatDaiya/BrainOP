@@ -30,7 +30,7 @@ function SignUp() {
     const sendData = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/reg",
+          "https://brainop-back.onrender.com/api/reg",
           data
         );
         setMessage(response.data.message);

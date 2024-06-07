@@ -30,7 +30,7 @@ function Login() {
     const checkData = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/login",
+          "https://brainop-back.onrender.com/api/login",
           data
         );
         setCookies("access_token", response.data.token, { path: "/" });

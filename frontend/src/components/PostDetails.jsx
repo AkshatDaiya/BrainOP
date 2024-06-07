@@ -10,7 +10,7 @@ function PostDetails() {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          `http://localhost:5000/api/postDetails/${id}`
+          `https://brainop-back.onrender.com/api/postDetails/${id}`
         );
         setSingleData(response.data.apiData);
       } catch (error) {
