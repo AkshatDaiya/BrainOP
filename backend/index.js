@@ -9,13 +9,17 @@ mongoose.connect(`${process.env.DB_URL}`);
 const Router = require("./router/user.router.js");
 const cookieParser = require("cookie-parser");
 
-const corsOptions = {
-  origin: "http://localhost:5173",
-  credentials: true,
-};
+app.use(cors({
+  origin: 'https://grull-task.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+app.get('/', (req, res) => {
+  res.send('Server is started...');
+});
 
 app.use(cookieParser());
-app.use(cors(corsOptions));
 app.use("/api", Router);
 app.use(express.static("public"));
 app.listen(process.env.PORT, () =>
